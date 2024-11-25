@@ -366,7 +366,8 @@ export default function PhotoSlider(props: IPhotoSliderProps) {
               : ''
         }`}
         style={{
-          background: currentOpacity ? `rgba(0, 0, 0, ${currentOpacity})` : undefined,
+          background: currentOpacity ? `rgba(45, 60, 78, ${currentOpacity})` : undefined,
+          backdropFilter: 'blur(2.5px)',
           transitionTimingFunction: currentEasing,
           transitionDuration: `${touched ? 0 : currentSpeed}ms`,
           animationDuration: `${currentSpeed}ms`,
