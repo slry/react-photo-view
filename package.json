@@ -1,39 +1,45 @@
 {
-  "name": "root",
-  "private": true,
+  "name": "react-photo-view",
+  "version": "1.2.6",
   "description": "An exquisite React photo preview component",
   "author": "MinJieLiu",
   "license": "Apache-2.0",
   "repository": "https://github.com/MinJieLiu/react-photo-view.git",
+  "source": "src/index.ts",
+  "main": "./dist/react-photo-view.js",
+  "module": "./dist/react-photo-view.module.js",
+  "types": "./dist/index.d.ts",
+  "keywords": [
+    "react",
+    "react component",
+    "react photo",
+    "react-photo-view",
+    "photo",
+    "image",
+    "photo preview",
+    "image preview",
+    "gallery",
+    "carousel"
+  ],
   "scripts": {
-    "dev": "pnpm -C ./packages/example dev",
-    "build": "pnpm -C ./packages/react-photo-view build",
-    "start": "pnpm -C ./packages/example start",
-    "prepare": "husky install",
-    "lint": "npm run lint:js && npm run lint:prettier",
-    "lint:js": "eslint --cache --ext .js,.jsx,.ts,.tsx --format=pretty packages/ --fix",
-    "lint:prettier": "prettier --check \"**/*\" --end-of-line auto --write",
-    "lint:style": "stylelint --fix \"**/*.less\" --syntax less",
-    "lint-staged": "lint-staged"
+    "build": "rimraf ./dist && microbundle --external react,react-dom --format cjs,esm,modern",
+    "prepublishOnly": "npm run build"
   },
-  "lint-staged": {
-    "**/*.less": "stylelint --syntax less",
-    "**/*.{js,jsx,ts,tsx}": "eslint --fix --ext .js,.jsx,.ts,.tsx",
-    "**/*.{js,jsx,tsx,ts,less,md,json}": [
-      "prettier --write"
-    ]
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
   },
   "devDependencies": {
-    "@micro-web/standard": "^1.2.2",
+    "@micro-web/microbundle": "^0.14.3",
     "@types/react": "^18.2.45",
     "@types/react-dom": "^18.2.18",
-    "husky": "^7.0.4",
-    "lint-staged": "^12.3.3",
-    "next": "^14.0.4",
-    "prettier": "^3.1.1",
+    "less": "^4.1.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "typescript": "^4.9.5"
+    "rimraf": "^3.0.2"
   },
-  "packageManager": "pnpm@9.11.0+sha512.0a203ffaed5a3f63242cd064c8fb5892366c103e328079318f78062f24ea8c9d50bc6a47aa3567cabefd824d170e78fa2745ed1f16b132e16436146b7688f19b"
+  "files": [
+    "dist"
+  ],
+  "packageManager": "pnpm@9.14.2+sha512.6e2baf77d06b9362294152c851c4f278ede37ab1eba3a55fda317a4a17b209f4dbb973fb250a77abc463a341fcb1f17f17cfa24091c4eb319cda0d9b84278387"
 }
