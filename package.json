@@ -9,12 +9,12 @@
     "dev": "pnpm -C ./packages/example dev",
     "build": "pnpm -C ./packages/react-photo-view build",
     "start": "pnpm -C ./packages/example start",
-    "prepare": "husky install && pnpm run build",
+    "prepare": "husky install",
     "lint": "npm run lint:js && npm run lint:prettier",
     "lint:js": "eslint --cache --ext .js,.jsx,.ts,.tsx --format=pretty packages/ --fix",
     "lint:prettier": "prettier --check \"**/*\" --end-of-line auto --write",
     "lint:style": "stylelint --fix \"**/*.less\" --syntax less",
-    "lint-staged": "lint-staged",
+    "lint-staged": "lint-staged"
   },
   "lint-staged": {
     "**/*.less": "stylelint --syntax less",
