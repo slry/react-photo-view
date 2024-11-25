@@ -7,7 +7,7 @@
   "repository": "https://github.com/MinJieLiu/react-photo-view.git",
   "scripts": {
     "dev": "pnpm -C ./packages/example dev",
-    "build": "pnpm -C ./packages/react-photo-view build && pnpm -C ./packages/example build",
+    "build": "pnpm -C ./packages/react-photo-view build",
     "start": "pnpm -C ./packages/example start",
     "prepare": "husky install && pnpm run build",
     "lint": "npm run lint:js && npm run lint:prettier",
