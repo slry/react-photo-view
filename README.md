@@ -1,4 +1,5 @@
 # react-photo-view
+## FORKED
 
 **English** | [中文](./README.zh-CN.md)
 
