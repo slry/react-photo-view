@@ -87,6 +87,9 @@ export interface PhotoProviderBase {
   maskClassName?: string;
   photoWrapClassName?: string;
   photoClassName?: string;
+  bannerClassName?: string;
+  arrowRightClassName?: string;
+  arrowLeftClassName?: string;
   /**
    * 自定义 loading
    */

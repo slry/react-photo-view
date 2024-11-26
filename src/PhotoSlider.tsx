@@ -91,6 +91,7 @@ export default function PhotoSlider(props: IPhotoSliderProps) {
     maskClassName,
     photoClassName,
     photoWrapClassName,
+    bannerClassName,
     loadingElement,
     brokenElement,
     images,
@@ -375,7 +376,7 @@ export default function PhotoSlider(props: IPhotoSliderProps) {
         onAnimationEnd={onAnimationEnd}
       />
       {bannerVisible && (
-        <div className="PhotoView-Slider__BannerWrap">
+        <div className={`PhotoView-Slider__BannerWrap${bannerClassName ? `${bannerClassName}` : ''}`}>
           <div className="PhotoView-Slider__Counter">
             {index + 1} / {imageLength}
           </div>
