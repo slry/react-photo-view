@@ -92,6 +92,8 @@ export default function PhotoSlider(props: IPhotoSliderProps) {
     photoClassName,
     photoWrapClassName,
     bannerClassName,
+    arrowLeftClassName,
+    arrowRightClassName,
     loadingElement,
     brokenElement,
     images,
@@ -376,7 +378,7 @@ export default function PhotoSlider(props: IPhotoSliderProps) {
         onAnimationEnd={onAnimationEnd}
       />
       {bannerVisible && (
-        <div className={`PhotoView-Slider__BannerWrap${bannerClassName ? `${bannerClassName}` : ''}`}>
+        <div className={`PhotoView-Slider__BannerWrap${bannerClassName ? ` ${bannerClassName}` : ''}`}>
           <div className="PhotoView-Slider__Counter">
             {index + 1} / {imageLength}
           </div>
@@ -420,12 +422,18 @@ export default function PhotoSlider(props: IPhotoSliderProps) {
       {!isTouchDevice && bannerVisible && (
         <>
           {(enableLoop || index !== 0) && (
-            <div className="PhotoView-Slider__ArrowLeft" onClick={() => changeIndex(index - 1, true)}>
+            <div
+              className={`PhotoView-Slider__ArrowLeft${arrowLeftClassName ? ` ${arrowLeftClassName}` : ''}`}
+              onClick={() => changeIndex(index - 1, true)}
+            >
               <ArrowLeft />
             </div>
           )}
           {(enableLoop || index + 1 < imageLength) && (
-            <div className="PhotoView-Slider__ArrowRight" onClick={() => changeIndex(index + 1, true)}>
+            <div
+              className={`PhotoView-Slider__ArrowRight${arrowRightClassName ? ` ${arrowRightClassName}` : ''}`}
+              onClick={() => changeIndex(index + 1, true)}
+            >
               <ArrowRight />
             </div>
           )}
