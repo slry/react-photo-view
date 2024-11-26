@@ -380,7 +380,7 @@ export default function PhotoSlider(props: IPhotoSliderProps) {
       {bannerVisible && (
         <div className={`PhotoView-Slider__BannerWrap${bannerClassName ? ` ${bannerClassName}` : ''}`}>
           <div className="PhotoView-Slider__Counter">
-            {index + 1} / {imageLength}
+            {index + 1}/{imageLength}
           </div>
           <div className="PhotoView-Slider__BannerRight">
             {toolbarRender && overlayParams && toolbarRender(overlayParams)}
